@@ -4,12 +4,11 @@
 # description: Display list of running jobs (LFS Job Scheduler/Custo Config)
 # sample usage: ..
 
-
-
-alias _jobs='bjobs -l | grep "R CMD" --context=4 --after-context=8 | \
+alias _jobs_short='bjobs -l | grep "R CMD" --context=4 --after-context=8 | \
 	tr '\''\n'\'' '\'' '\''  | sed '\''s/ \{3,\}//g'\'' | grep -o  \
-	"[^ ]*\\.R[^o][^\\.]*\\.Rout"'
+	"[^ ]*\\.R[^o][^\\.]*\\.Rout" | grep -o  "[^ ]*\\.R[^o]"'
 
-_jobs
+_jobs_short
 
 #----------------------------------------------------------------------------#
+
