@@ -1,15 +1,12 @@
 #----------------------------------------------------------------------------#
-shopt -s expand_aliases
 
 # title: job
 # description: Display list of running jobs (LFS Job Scheduler/Custo Config)
 # sample usage: ..
 
-alias _job='bjobs -l | grep "R CMD" --context=4 --after-context=8 | \
+eval $'bjobs -l | grep "R CMD" --context=4 --after-context=8 | \
 	tr '\''\n'\'' '\'' '\''  | sed '\''s/ \{3,\}//g'\'' | grep -o  \
 	"[^ ]*\\.R[^o][^\\.]*\\.Rout"'
-
-_job
 
 #----------------------------------------------------------------------------#
 
