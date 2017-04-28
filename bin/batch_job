@@ -4,7 +4,7 @@
 # description: submit batch mode job (LFS Job Scheduler / Custom Config)
 # sample usage: ..
 
-batch_job(){
+_batch_job(){
 	path=$(pwd)
 	script_name=${path}/${1}
 	output_name_default=${path}/${1}out
@@ -28,6 +28,9 @@ batch_job(){
 
 
 }
+
+# execute
+_batch_job "$@
 
 #----------------------------------------------------------------------------#
 

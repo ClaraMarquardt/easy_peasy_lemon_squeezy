@@ -5,7 +5,7 @@
 # remote using scp
 # sample usage: down temp* # download all files starting with 'temp'
 
-down (){
+_down (){
 	
 	# identify files
 	file_list=${1}
@@ -28,6 +28,9 @@ down (){
 	rm ${system_date}_zip_folder_temp.zip
 	rm -r ${system_date}_zip_folder_temp
 }
+
+# execute
+_down "$@"
 
 #----------------------------------------------------------------------------#
 

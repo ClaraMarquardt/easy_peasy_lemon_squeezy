@@ -1,11 +1,11 @@
-#----------------------------------------------------------------------------#
+sub#----------------------------------------------------------------------------#
 
 # title: batch_job_ext
 # description: submit batch mode job (LFS Job Scheduler / Custom Config) - 
 # extended options
 # sample usage: ..
 
-batch_job_ext(){
+_batch_job_ext(){
 	
 
 	if echo "${1}" | grep -q "/"; then
@@ -63,6 +63,9 @@ batch_job_ext(){
     rm ${output_name_2}
 
 }
+
+# execute
+_batch_job_ext "$@
 
 #----------------------------------------------------------------------------#
 
