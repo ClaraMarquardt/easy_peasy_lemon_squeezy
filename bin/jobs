@@ -1,4 +1,5 @@
 #----------------------------------------------------------------------------#
+shopt -s expand_aliases
 
 # title: jobs_short
 # description: Display list of running jobs (LFS Job Scheduler/Custo Config)
