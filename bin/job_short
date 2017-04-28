@@ -1,14 +1,15 @@
 #----------------------------------------------------------------------------#
+shopt -s expand_aliases
 
-# title: jobs_short
+# title: job_short
 # description: Display list of running jobs (LFS Job Scheduler/Custo Config)
 # sample usage: ..
 
-alias _jobs_short='bjobs -l | grep "R CMD" --context=4 --after-context=8 | \
+alias _job_short='bjobs -l | grep "R CMD" --context=4 --after-context=8 | \
 	tr '\''\n'\'' '\'' '\''  | sed '\''s/ \{3,\}//g'\'' | grep -o  \
 	"[^ ]*\\.R[^o][^\\.]*\\.Rout" | grep -o  "[^ ]*\\.R[^o]"'
 
-_jobs_short
+_job_short
 
 #----------------------------------------------------------------------------#
 
