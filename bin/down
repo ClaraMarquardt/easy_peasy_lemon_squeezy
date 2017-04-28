@@ -22,7 +22,7 @@ _down (){
 	zip -r ${system_date}_zip_folder_temp.zip ${system_date}_zip_folder_temp
 
 	# download
-	it2dl ${system_date}_zip_folder_temp.zip
+	$HOME/.iterm2/it2dl ${system_date}_zip_folder_temp.zip
 
 	# remove folder
 	rm ${system_date}_zip_folder_temp.zip
