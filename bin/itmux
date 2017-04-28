@@ -1,0 +1,14 @@
+#----------------------------------------------------------------------------#
+
+# title: itmux
+# description: connect to local tmux session
+# sample usage: itmux
+
+_itmux() {
+  if /usr/local/bin/tmux has-session; then exec /usr/local/bin/tmux -CC attach; else exec /usr/local/bin/tmux -CC; fi
+}
+
+# execute
+_itmux 
+
+#----------------------------------------------------------------------------#

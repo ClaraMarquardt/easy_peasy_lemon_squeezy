@@ -1,0 +1,21 @@
+#----------------------------------------------------------------------------#
+
+# title: rgs_forward
+# description: launch port forwarding connection (remote -> local port -> chrome)
+# sample usage: ..
+
+_rgs_forward(){
+	remote_port=$1
+	echo "remote_port: ${remote_port}"
+	local_port=$2
+    echo "local_port: ${local_port}"
+	ssh -N -L ${local_port}:localhost:${remote_port}: rgs &
+    command="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --kiosk http://localhost:${local_port}/"
+    eval $command
+    echo 'connection sucessfull'
+}
+
+# execute
+_rgs_forward "$@"
+
+#----------------------------------------------------------------------------#

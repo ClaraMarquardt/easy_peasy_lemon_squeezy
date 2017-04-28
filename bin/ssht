@@ -1,0 +1,16 @@
+#----------------------------------------------------------------------------#
+
+# title: ssht
+# description: connect to remote & launch tmux
+# sample usage: ssht [path to remote]
+
+_ssht() {
+  #ssh $1 -t 'exec ~/local/bin/tmux new-session || exec ~/local/bin/tmux attach'
+  ssh $1 -t 'if ~/local/bin/tmux has-session; then exec ~/local/bin/tmux -CC attach; else exec ~/local/bin/tmux -CC; fi'
+}
+
+# execute
+_ssht "$@"
+
+#----------------------------------------------------------------------------#
+
