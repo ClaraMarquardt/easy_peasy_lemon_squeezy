@@ -1,6 +1,6 @@
 #----------------------------------------------------------------------------#
 
-# title: unzip_recent
+# title: ur (unzip_recent)
 # description: unzip most recent download
 
 ur () {
