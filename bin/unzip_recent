@@ -3,10 +3,10 @@
 # title: unzip_recent
 # description: unzip most recent download
 
-_unzip_recent () {
+ur () {
    
    # file list
-   file=$(ls -tr $HOME/Downloads/*zip | tail -1  )
+   file=$(ls -tr $HOME/Downloads/*.zip | tail -1  )
    echo $file 
 
    #unzip
@@ -21,7 +21,7 @@ _unzip_recent () {
 }
 
 # execute
-_unzip_recent
+_ur
 
 
 #----------------------------------------------------------------------------#
