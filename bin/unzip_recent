@@ -12,11 +12,11 @@ _unzip_recent () {
    #unzip
    cd $HOME/Downloads
    file_name=$(echo $file | cut -f 1 -d '.')
-   mkdir $file_name
-   unzip -f $file -d $file_name
+   mkdir ${file_name}_unzip
+   unzip $file  && mv $file_name ${file_name}_unzip/
 
    # reveal 
-   reveal $file_name
+   reveal ${file_name}_unzip
    
 }
 
