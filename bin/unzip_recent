@@ -11,10 +11,11 @@ _unzip_recent () {
 
    #unzip
    cd $HOME/Downloads
-   unzip -f $file
+   file_name=$(echo $file | cut -f 1 -d '.')
+   mkdir $file_name
+   unzip -f $file -d $file_name
 
    # reveal 
-   file_name=$(echo $file | cut -f 1 -d '.')
    reveal $file_name
    
 }
