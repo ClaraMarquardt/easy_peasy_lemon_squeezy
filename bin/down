@@ -11,10 +11,6 @@ _up (){
 	file_list=${1}
 	echo ${file_list}
 
-	# identify remote
-	remote=${2}
-	remote_path=${3}
-
 	#create temp folder
 	system_date=$(date +%Y%m%d%H%M%S)
 	mkdir ${system_date}_zip_folder_temp
@@ -25,17 +21,17 @@ _up (){
 	# zip folder
 	zip -r ${system_date}_zip_folder_temp.zip ${system_date}_zip_folder_temp
 
-	# upload & unzip
-	scp ${system_date}_zip_folder_temp.zip ${remote}:${remote_path}
-	ssh -f ${remote} "unzip $remote_path/${system_date}_zip_folder_temp.zip"
+	# download 
+	$HOME/.iterm2/it2dl ${system_date}_zip_folder_temp.zip
 
-	# remove folder (locally)
+	# remove folder 
 	rm ${system_date}_zip_folder_temp.zip
 	rm -r ${system_date}_zip_folder_temp
 }
 
 # execute
-_up "$@"
+_down "$@"
+
 
 #----------------------------------------------------------------------------#
 

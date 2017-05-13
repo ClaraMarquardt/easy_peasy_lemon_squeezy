@@ -1,0 +1,25 @@
+#----------------------------------------------------------------------------#
+
+# title: reveal
+# description: open folder
+
+_reveal () {
+   # if the first arg is a directory
+   if [[ -d "$1" ]];
+       then
+           # ..use the argument directly
+           basedir="$1"
+       else
+           # ..we passed a file, so use its containing directory
+           basedir=$(dirname "$1")
+   fi
+   # basedir is a directory in now, so open will activate Finder
+   open "$basedir"
+}
+
+# execute
+_reveal "$@"
+
+
+#----------------------------------------------------------------------------#
+

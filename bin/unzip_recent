@@ -1,0 +1,27 @@
+#----------------------------------------------------------------------------#
+
+# title: unzip_recent
+# description: unzip most recent download
+
+_unzip_recent () {
+   
+   # file list
+   file=$(ls -tr $HOME/Downloads/*zip | tail -1  )
+   echo $file 
+
+   #unzip
+   cd $HOME/Downloads
+   unzip -f $file
+
+   # reveal 
+   file_name=$(echo $file | cut -f 1 -d '.')
+   reveal $file_name
+   
+}
+
+# execute
+_unzip_recent
+
+
+#----------------------------------------------------------------------------#
+
