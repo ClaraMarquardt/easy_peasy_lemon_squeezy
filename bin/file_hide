@@ -1,0 +1,10 @@
+#----------------------------------------------------------------------------#
+
+# title: file_hide
+# description: Hide hidden files (mac specific)
+# sample usage: ..
+
+eval $'defaults write com.apple.finder AppleShowAllFiles NO'
+
+#----------------------------------------------------------------------------#
+
