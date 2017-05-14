@@ -3,7 +3,7 @@
 # title: ur (unzip_recent)
 # description: unzip most recent download
 
-ur () {
+_ur () {
    
    # file list
    file=$(ls -tr $HOME/Downloads/*.zip | tail -1  )
