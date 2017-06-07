@@ -1,0 +1,10 @@
+
+#----------------------------------------------------------------------------#
+
+# title: ds_delete
+# description: Delete (with confirmation) (Mac) .DS/.[file name] files
+# sample usage: ..
+
+eval $'find . -type f -name "._*" -exec rm -i {} \;'
+
+#----------------------------------------------------------------------------#

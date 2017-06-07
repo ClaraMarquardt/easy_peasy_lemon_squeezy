@@ -5,7 +5,7 @@
 # remote using scp
 # sample usage: up temp* # upload all files starting with 'temp'
 
-_up (){
+_down (){
 	
 	# identify files
 	file_list=${1}
