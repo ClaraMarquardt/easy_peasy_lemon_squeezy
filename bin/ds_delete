@@ -6,5 +6,7 @@
 # sample usage: ..
 
 eval $'find . -type f -name "._*" -exec rm -i {} \;'
+eval $'find . -type f -name ".DS_Store" -exec rm -i {} \;'
+
 
 #----------------------------------------------------------------------------#
