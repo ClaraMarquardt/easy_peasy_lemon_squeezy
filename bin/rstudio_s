@@ -1,0 +1,17 @@
+#----------------------------------------------------------------------------#
+
+# title: rstudio_s
+# description: connect to remote rstudio server
+# sample usage: rstudio_s [server] [local port]
+
+_rstudio_s() {
+  ssh -v -f -N -L ${2}:localhost:8787 ${1}&
+  command="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --kiosk http://localhost:${2}/"
+  eval $command
+}
+
+# execute
+_rstudio_s "$@"
+
+#----------------------------------------------------------------------------#
+
