@@ -1,0 +1,24 @@
+#----------------------------------------------------------------------------#
+
+# title: delete_pdf_page
+# description: Delete every second page in a PDF
+# sample usage: ..
+
+
+_delete_pdf_page (){
+	
+	# input/output
+	input=${1}
+	output=${2}
+
+	# execute
+	pdftk ${input} cat 1-endeven output ${output} 
+	
+}
+
+# execute
+_delete_pdf_page "$@"
+
+
+
+#----------------------------------------------------------------------------#
